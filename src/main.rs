@@ -60,8 +60,8 @@ impl Response {
                 };
 
                 let compressed_content = match algorithm {
-                    Some(c) if c.contains("gzip") => compress_gzip(&self.content),
-                    Some(c) if c.contains("deflate") => compress_deflate(&self.content),
+                    Some("gzip") => compress_gzip(&self.content),
+                    Some("deflate") => compress_deflate(&self.content),
                     _ => Ok(self.content.clone()),
                 };
 
