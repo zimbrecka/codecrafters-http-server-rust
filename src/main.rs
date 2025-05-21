@@ -139,7 +139,6 @@ fn handle_http_message(request: &Request, dest_dir: &str) -> Vec<u8> {
 fn handle_response(response: Response) -> Vec<u8> {
     let content = response.content;
     let head = match response.status {
-        // HttpCode::Ok if content.is_empty() => "204 No Content",
         HttpCode::Ok => "200 OK",
         HttpCode::BadRequest => "400 Bad Request",
         HttpCode::NotFound => "404 Not Found",
