@@ -3,7 +3,6 @@ mod request;
 mod route;
 
 use anyhow::Result;
-#[allow(unused_imports)]
 use std::net::TcpListener;
 use std::net::TcpStream;
 use std::{
